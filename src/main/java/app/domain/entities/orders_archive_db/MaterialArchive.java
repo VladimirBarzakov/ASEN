@@ -1,18 +1,19 @@
-package app.domain.entities.custom_product_db.base_ents;
+package app.domain.entities.orders_archive_db;
 
-import app.domain.entities.custom_product_db.secondary_ents.TechnologyOperations;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name = "technology")
-public class Technology implements Serializable {
+public class MaterialArchive {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Nullable
+    private int materialId;
 
     @Column(nullable = false, length = 400, unique = true)
     private String name;
@@ -21,6 +22,5 @@ public class Technology implements Serializable {
     private String description;
 
     @OneToMany
-    private Set<TechnologyOperations> technologyOperations;
-
+    private Set<MaterialOperationArchive> participatedRecords;
 }

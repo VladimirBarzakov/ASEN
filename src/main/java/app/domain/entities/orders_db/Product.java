@@ -1,7 +1,7 @@
 package app.domain.entities.orders_db;
 
-import app.domain.entities.custom_product_db.base_ents.Material;
-import app.domain.entities.custom_product_db.secondary_ents.TechnologyOperations;
+import app.domain.entities.custom_product_db.Material;
+import app.domain.entities.custom_product_db.TechnologyOperations;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -11,6 +11,9 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(nullable = false)
+    private String name;
+
     @ManyToMany
     private Set<Phone> phones;
 

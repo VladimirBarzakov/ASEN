@@ -1,6 +1,6 @@
-package app.domain.entities.custom_product_db.secondary_ents;
+package app.domain.entities.custom_product_db;
 
-import app.domain.entities.custom_product_db.base_ents.Material;
+import app.domain.entities.orders_archive_db.MaterialArchive;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
@@ -32,6 +32,9 @@ public class MaterialOperation implements Serializable {
     @Nullable
     @Column(precision = 19, scale = 2)
     private BigDecimal addedValue;
+
+    @OneToOne
+    private MaterialArchive materialArchive;
 
     public BigDecimal getMaterialConsumptionRate() {
         return this.materialConsumptionRate;

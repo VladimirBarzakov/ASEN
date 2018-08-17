@@ -1,9 +1,8 @@
-package app.domain.entities.custom_product_db.base_ents;
+package app.domain.entities.custom_product_db;
 
 
 import app.contracts.domain.entities.product_element_ents.Sellable;
 import app.domain.entities.orders_db.Product;
-import app.domain.entities.custom_product_db.secondary_ents.MaterialOperation;
 import app.enums.MaterialRoleInProduction;
 import org.springframework.lang.NonNull;
 
