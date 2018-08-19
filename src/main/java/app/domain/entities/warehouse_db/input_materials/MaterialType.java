@@ -3,6 +3,7 @@ package app.domain.entities.warehouse_db.input_materials;
 import javax.persistence.*;
 import java.util.Set;
 
+@Entity
 public class MaterialType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

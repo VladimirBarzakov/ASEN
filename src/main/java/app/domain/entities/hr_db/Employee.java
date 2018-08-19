@@ -1,5 +1,6 @@
 package app.domain.entities.hr_db;
 
+import app.domain.entities.archive_db.hr_archive.EmployeeArch;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
@@ -35,4 +36,7 @@ public class Employee {
 
     @NonNull
     private int totalDayOff;
+
+    @OneToOne
+    private EmployeeArch employeeArch;
 }

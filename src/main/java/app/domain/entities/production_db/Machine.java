@@ -1,5 +1,7 @@
 package app.domain.entities.production_db;
 
+import app.domain.entities.archive_db.machine_archive.MachineArch;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -20,4 +22,7 @@ public class Machine {
 
     @Column(nullable = true,columnDefinition = "TEXT")
     private String description;
+
+    @OneToOne
+    private MachineArch machineArch;
 }

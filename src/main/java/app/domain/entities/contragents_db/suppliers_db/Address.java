@@ -1,0 +1,26 @@
+package app.domain.entities.contragents_db.suppliers_db;
+
+import app.domain.entities.contragents_db.clients_db.Client;
+
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
+public class Address {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(nullable = false, length = 255)
+    private String country;
+
+    @Column(nullable = false, length = 255)
+    private String town;
+
+    @Column(nullable = false, length = 255)
+    private String adress;
+
+    @ManyToMany
+    private Set<Client> clients;
+}

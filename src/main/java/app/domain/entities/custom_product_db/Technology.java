@@ -1,5 +1,7 @@
 package app.domain.entities.custom_product_db;
 
+import app.domain.entities.production_db.Machine;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -21,4 +23,6 @@ public class Technology implements Serializable {
     @ManyToMany
     private Set<TechnologyOperation> technologyOperations;
 
+    @ManyToMany
+    private Set<Machine> usedMachines;
 }

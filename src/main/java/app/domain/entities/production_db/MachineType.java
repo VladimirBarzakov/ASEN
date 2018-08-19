@@ -1,7 +1,6 @@
 package app.domain.entities.production_db;
 
 import app.domain.entities.custom_product_db.Technology;
-import app.domain.entities.custom_product_db.TechnologyOperation;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -19,10 +18,8 @@ public class MachineType {
     @ManyToMany
     private Set<Machine> machines;
 
-
+    @ManyToMany
     private Set<Technology> technologiesParticipated;
-
-    private Set<TechnologyOperation> technologyOperation;
 
 
 }

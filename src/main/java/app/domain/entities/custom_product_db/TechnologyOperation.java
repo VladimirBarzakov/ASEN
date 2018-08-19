@@ -50,7 +50,7 @@ public class TechnologyOperation implements Serializable, Sellable {
     private Set<Product> productExitPoint;
 
     @OneToOne
-    private TechOpArch archiveId;
+    private TechOpArch techOpArch;
 
     @Override
     public BigDecimal getCost(){

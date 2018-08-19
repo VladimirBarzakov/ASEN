@@ -1,5 +1,6 @@
 package app.domain.entities.hr_db;
 
+import app.domain.entities.archive_db.hr_archive.OccupationArch;
 import app.domain.entities.custom_product_db.TechnologyOperationLabour;
 import app.domain.entities.custom_product_db.TechnologyOperationMachine;
 import app.domain.entities.production_db.Machine;
@@ -31,4 +32,7 @@ public class Occupation {
 
     @ManyToMany
     private Set<TechnologyOperationMachine> machineTechOperations;
+
+    @OneToOne
+    private OccupationArch occupationArch;
 }

@@ -1,5 +1,6 @@
 package app.domain.entities.warehouse_db.input_materials;
 
+import app.domain.entities.contragents_db.suppliers_db.Supplier;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
@@ -19,7 +20,6 @@ public class Material {
     @Column(nullable = false,length = 400)
     private String name;
 
-
     private Date deliveryDate;
 
     @NonNull
@@ -32,4 +32,7 @@ public class Material {
 
     @Column(precision = 19, scale = 2)
     private BigDecimal deliveredPrice;
+
+    @ManyToOne
+    private Supplier supplier;
 }
