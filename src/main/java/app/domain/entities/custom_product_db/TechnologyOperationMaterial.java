@@ -1,29 +1,29 @@
 package app.domain.entities.custom_product_db;
 
-import app.domain.entities.orders_archive_db.MaterialArchive;
+import app.domain.entities.archive_db.material_archive.MaterialArch;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Set;
 
 
 @Entity
 @Table(name = "materials_operation")
-public class MaterialOperation implements Serializable {
+public class TechnologyOperationMaterial implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NonNull
-    @OneToOne
+    @ManyToOne
     private Material material;
 
-    @NonNull
-    @OneToOne
-    private TechnologyOperations technologyOperations;
+    @ManyToMany
+    private Set<TechnologyOperation> technologyOperation;
 
     @NonNull
     @Column(precision = 19, scale = 4)
@@ -34,7 +34,7 @@ public class MaterialOperation implements Serializable {
     private BigDecimal addedValue;
 
     @OneToOne
-    private MaterialArchive materialArchive;
+    private MaterialArch materialArch;
 
     public BigDecimal getMaterialConsumptionRate() {
         return this.materialConsumptionRate;

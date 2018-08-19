@@ -1,23 +1,22 @@
-package app.domain.entities.orders_archive_db;
+package app.domain.entities.archive_db.orders_archive;
 
+import app.domain.entities.archive_db.machine_archive.MachineArch;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class MaterialOperationArchive {
-
+public class TechOpMachineArch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
-    private MaterialArchive materialArchive;
+    private MachineArch machineArch;
 
-    @NonNull
     @Column(precision = 19, scale = 4)
-    private BigDecimal quantity;
+    private BigDecimal hoursPerProduct;
 
     @NonNull
     @Column(precision = 19, scale = 2)

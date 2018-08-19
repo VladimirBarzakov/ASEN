@@ -18,7 +18,7 @@ public class Technology implements Serializable {
     @Column(nullable = true,columnDefinition = "TEXT")
     private String description;
 
-    @OneToMany
-    private Set<TechnologyOperations> technologyOperations;
+    @ManyToMany
+    private Set<TechnologyOperation> technologyOperations;
 
 }

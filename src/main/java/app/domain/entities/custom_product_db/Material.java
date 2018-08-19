@@ -29,14 +29,14 @@ public class Material implements Serializable, Sellable {
     @NonNull
     private MaterialRoleInProduction roleInTechnologyCycle;
 
-    @Column(precision = 19, scale = 2)
+    @Column(nullable = false,precision = 19, scale = 2)
     private BigDecimal cost;
 
-    @Column(precision = 19, scale = 2)
+    @Column(nullable = false,precision = 19, scale = 2)
     private BigDecimal price;
 
     @OneToMany
-    private Set<MaterialOperation> materialOperations;
+    private Set<TechnologyOperationMaterial> technologyOperationMaterials;
 
     @ManyToMany
     private Set<Product> productEntryPoint;

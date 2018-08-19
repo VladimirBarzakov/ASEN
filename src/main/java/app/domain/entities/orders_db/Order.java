@@ -1,6 +1,6 @@
 package app.domain.entities.orders_db;
 
-import app.domain.entities.clients_db.Client;
+import app.domain.entities.contragents_db.clients_db.Client;
 
 import javax.persistence.*;
 import java.util.Date;

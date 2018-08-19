@@ -1,12 +1,13 @@
-package app.domain.entities.orders_archive_db;
+package app.domain.entities.archive_db.material_archive;
 
+import app.domain.entities.archive_db.orders_archive.TechOpMaterialArch;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class MaterialArchive {
+public class MaterialArch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +23,5 @@ public class MaterialArchive {
     private String description;
 
     @OneToMany
-    private Set<MaterialOperationArchive> participatedRecords;
+    private Set<TechOpMaterialArch> participatedRecords;
 }

@@ -1,5 +1,7 @@
 package app.domain.entities.orders_db;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,6 +17,9 @@ public class ProductType {
 
     @Column(nullable = true,columnDefinition = "TEXT")
     private String description;
+
+    @NonNull
+    private boolean isDoubleSide;
 
     @ManyToMany
     private Set<Product> products;

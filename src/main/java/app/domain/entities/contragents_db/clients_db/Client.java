@@ -1,4 +1,4 @@
-package app.domain.entities.clients_db;
+package app.domain.entities.contragents_db.clients_db;
 
 import app.domain.entities.orders_db.Order;
 
@@ -24,7 +24,7 @@ public class Client {
     private Set<Address> deliveryAddresses;
 
     @OneToMany
-    private Set<Order> orderSet;
+    private Set<Order> orderHistory;
 
 
 }

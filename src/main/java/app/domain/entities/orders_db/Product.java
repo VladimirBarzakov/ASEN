@@ -1,7 +1,7 @@
 package app.domain.entities.orders_db;
 
 import app.domain.entities.custom_product_db.Material;
-import app.domain.entities.custom_product_db.TechnologyOperations;
+import app.domain.entities.custom_product_db.TechnologyOperation;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -26,7 +26,7 @@ public class Product {
     private Set<Material> entryMaterials;
 
     @ManyToMany
-    private Set<TechnologyOperations> exitPointsOperations;
+    private Set<TechnologyOperation> exitPointsOperations;
 
     @ManyToMany
     private Set<Material> exitPointMaterials;

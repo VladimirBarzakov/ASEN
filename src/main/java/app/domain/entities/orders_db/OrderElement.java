@@ -1,6 +1,6 @@
 package app.domain.entities.orders_db;
 
-import app.domain.entities.orders_archive_db.OrderElementRecord;
+import app.domain.entities.archive_db.orders_archive.TechOpRecord;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
@@ -15,7 +15,10 @@ public class OrderElement {
     private int id;
 
     @ManyToOne
-    private Product product;
+    private Product frontSideProduct;
+
+    @ManyToOne
+    private Product backSideProduct;
 
     @NonNull
     @Column(precision = 19, scale = 4)
@@ -25,5 +28,8 @@ public class OrderElement {
     private Order order;
 
     @OneToMany
-    private Set<OrderElementRecord> orderElementRecords;
+    private Set<TechOpRecord> frontSideTechOpRecord;
+
+    @OneToMany
+    private Set<TechOpRecord> backSideTechOpRecord;
 }

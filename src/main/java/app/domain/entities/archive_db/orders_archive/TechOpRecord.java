@@ -1,4 +1,4 @@
-package app.domain.entities.orders_archive_db;
+package app.domain.entities.archive_db.orders_archive;
 
 import app.domain.entities.orders_db.OrderElement;
 
@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-public class OrderElementRecord {
+public class TechOpRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,13 +17,16 @@ public class OrderElementRecord {
     private OrderElement orderElement;
 
     @ManyToOne
-    private TechOperationsArch techOperationsArch;
+    private TechOpArch techOpArch;
 
-    @Column(precision = 19, scale = 2)
-    private BigDecimal costOfOperation;
+    @OneToMany
+    private Set<TechOpMaterialArch> materialArchSet;
 
-    @Column(precision = 19, scale = 2)
-    private BigDecimal addedValueOfOperation;
+    @OneToMany
+    private Set<TechOpLabourArch> labourArchSet;
+
+    @OneToMany
+    private Set<TechOpMachineArch> machineArchSet;
 
     @Column(precision = 19, scale = 2)
     private BigDecimal totalCost;
@@ -31,6 +34,5 @@ public class OrderElementRecord {
     @Column(precision = 19, scale = 2)
     private BigDecimal totalPrice;
 
-    @OneToMany
-    private Set<MaterialOperationArchive> materialArchives;
+
 }
